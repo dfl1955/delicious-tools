@@ -1,5 +1,9 @@
+
+# DFL 20/7/2020
+
+# This program generates the HTL from the pickle stored dictionary
+
 from html.parser import HTMLParser
-#import urllib.request
 import pickle
 
 # open the dictionary file and assign to a dictionary
@@ -8,6 +12,8 @@ dictfile = open('bookmarks.pickle','rb')
 D = {};                     # the input dictionary
 D = pickle.load(dictfile) ; # loads a dictionary
 dictfile.close()
+
+# set the working storage variables
 
 K=[]; K = D.keys(); s=''; i=0
 
@@ -18,6 +24,7 @@ for key in K:
     if D[key]['STATUS'] == 'OK':
         print(key, D[key])
         tagline=D[key]['TAGS'].replace(',',', ')
+        # do I need to HTMLise the ASCII code
         s=s+((elementhtml %(D[key]['HREF'],D[key]['ANCHOR TEXT'],D[key]['DESCRIPTION'],tagline)))
         i = i + 1
 
