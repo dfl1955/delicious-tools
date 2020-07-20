@@ -5,10 +5,12 @@
 # corresponding HTML codes. 
 
 
-htmlcodes={ "'" : '&apos;',     '£':'&pound;',  '& ':'&amp;',    '€': '&euro;',
-            "ß": '&szlig;',     'ä': '&auml;',  'ö':'&ouml;',   'ü': '&uuml;',
-            'Ä': '&Auml;',      'Ö': '&Oml;',   'Ü': 'Uuml;',   'µ': '&micro;',
-           '-': '&#45;',        '/': '&#47;'}
+htmlcodes={ "'" : '&apos;', '£':'&pound;',  '& ':'&amp;',   '€': '&euro;',
+            'ß': '&szlig;', 'ä': '&auml;',  'ö':'&ouml;',   'ü': '&uuml;',
+            'Ä': '&Auml;',  'Ö': '&Oml;',   'Ü': 'Uuml;',   'µ': '&micro;',
+            '-': '&#45;',   '/': '&#47;',   '’': '&apos;',  '!': '&#33;'
+            '"': '&quot;',  '#': '&#35;',   '$'; '&#36;',   '%': '&#37;',
+            '(': '&#40;',   ')': '&#41;' } 
 
 
 # this function takes two parameters, the text to be converted and a dictionary
@@ -18,6 +20,5 @@ htmlcodes={ "'" : '&apos;',     '£':'&pound;',  '& ':'&amp;',    '€': '&euro;
 def tr (txt,codes=htmlcodes):
     for sym in codes.keys():
         txt=txt.replace(sym,codes[sym])
-    o=txt
     return txt
 
