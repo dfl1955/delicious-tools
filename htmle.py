@@ -9,7 +9,7 @@ htmlcodes={ "'" : '&apos;', '£':'&pound;',  '& ':'&amp; ',  '€': '&euro;',
             'ß': '&szlig;', 'ä': '&auml;',  'ö':'&ouml;',   'ü': '&uuml;',
             'Ä': '&Auml;',  'Ö': '&Oml;',   'Ü': 'Uuml;',   'µ': '&micro;',
             '-': '&#45;',   '/': '&#47;',   '’': '&apos;',  '!': '&#33;',
-            '"': '&#34;',  '$': '&#36;',   '%': '&#37;',
+            '"': '&#34;',  '$': '&#36;',    '%': '&#37;',   '®': '&reg;',
             '(': '&#40;',   ')': '&#41;',   '*': '&#42;',   '+': '&#43;',
             ':': '&#58;',   '=': '&#61;',   '?': '&#63;',
             '@': '&#64;' }
@@ -21,13 +21,15 @@ htmlcodes={ "'" : '&apos;', '£':'&pound;',  '& ':'&amp; ',  '€': '&euro;',
 # _ 	&#95; 	  	underscore
 # ` 	&#96; 	  	grave / accent
 
-# I took ';': '&#59;', out as it was double printing 
+# I took ';': '&#59;', out as it was double printing, so needs a fix
 
 #Are we going to do ' #': ' &#35;'? And what about <>?
 
 # this function takes two parameters, the text to be converted and a dictionary
 # holding a series of (symbol: html code) pairs, it will use my dictionary as
 # a default
+
+# if we do the ; first, then it might work
 
 def tr (txt,codes=htmlcodes):
     for sym in codes.keys():
