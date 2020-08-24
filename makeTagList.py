@@ -32,12 +32,18 @@ for e in K:                 # for all keys in K
 
 # dict T holds the tags and their associated keys from K
 
-for t in T.keys():
-    print (t,T[t])
+for s in ['uru','html','London','brussels','bruxelles']:
+    print (s,T[s])
+
+
+output_db = open("tags.pickle","wb")
+pickle.dump(T,output_db)
+output_db.close()
+print ("file ./tags.pickle created")
 
 # i could save this to another pickle db or write out the RSS files I want
 
-#
+# rss <item><title><link><description></item>
 
   
 
